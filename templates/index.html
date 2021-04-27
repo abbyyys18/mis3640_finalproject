@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Internship Finder</title>
+    <!-- <link rel="stylesheet" href="static/stylesheet.css"> -->
+<style>
+    body {
+  background: linear-gradient(
+    -20deg,
+    rgb(233, 222, 250) 0%,
+    rgb(251, 252, 219) 100%
+  );
+}
+h1 {
+  color: #885ef1;
+  font-family: "Raleway", sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 30px 24px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
+}
+h2 {
+  color: #272244;
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: 0 0 24px;
+  text-align: center;
+}
+h3 {
+  color: #272244;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 25px;
+  margin: 0 0 24px;
+  text-align: center;
+  padding: 4px;
+}
+p {
+  color: #272244;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 25px;
+  margin: 0 0 24px;
+  text-align: center;
+  padding: 4px;
+}
+.header-text {
+  position: absolute;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.subheading-text {
+  width: 100%;
+  background-color: #C4BFFC;
+}
+.gif {
+  align-items: center;
+
+  width: 70%;
+}
+.game-container {
+  margin-right: 20%;
+  margin-left: 20%;
+  position: absolute;
+}
+
+.game {
+  margin-right: auto;
+  margin-left: auto;}
+img {
+  position: relative;
+  text-align: center;
+  margin-right: auto;
+  margin-left: 56%;
+}
+.header-text {
+  padding-top: 80px;
+  position: relative;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+input[type="submit"] {
+  font-family: "Ubuntu", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 200px;
+  height: 70px;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 3px solid #8c82fc;
+  background: #fff;
+  color: #8c82fc;
+  border-radius: 40px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.35s;
+}
+input[type="submit"]:hover {
+  background: #8c82fc;
+  color: #fff;
+}
+
+</style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-text">
+            <h1>Quick Analytics Internship Finder</h1>
+            <br>
+            <h2> This app scrapes all up-to-date analytics internship listings on Indeed so you won't have to spend hours scrolling through the website anymore! </h2>
+        </div>
+    </div>
+    <div class="wrapper">
+        <form action="{{ url_for('result') }}" method="POST">
+            <p> <input type="submit" name="submit_button" value="START"></p>
+        </form>
+    </div>
+    <div class="subheading-text">
+        <h3> IMPORTANT: ONLY PRESS START BUTTON ONCE. PLEASE WAIT FOR A FEW MINUTES TO SEE RESULTS PAGE.</h3>
+    </div>
+    <div>
+        <h3>
+            In the meantime, enjoy this GIF! 
+        </h3>
+        <div class="gif">
+          <img src="https://i.pinimg.com/originals/29/fe/10/29fe10f5f5d12a50a3de6908e665c687.gif" alt="Shaun the Sheep" width="300px" >
+      </div>
+        <h3>
+            Or, play a game!
+        </h3>
+    </div>
+    <div class="game-container">
+      <div class="game">
+        <script src="https://cdn.htmlgames.com/embed.js?game=EndlessBreakOut&amp;bgcolor=white"></script>
+      </div>
+    </div>
+</body>
+</html>

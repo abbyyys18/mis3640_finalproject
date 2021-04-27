@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bulma.min.css">
+    <style>
+        body {
+      background: linear-gradient(
+        -20deg,
+        rgb(233, 222, 250) 0%,
+        rgb(251, 252, 219) 100%
+      );}
+      h2 {
+        color: #272244;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 25px;
+  margin: 30px;
+  text-align: center;
+  padding: 4px;
+}
+      .results {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> 
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bulma.min.js"></script> 
+    <script>
+    $(document).ready(function() {
+    $('#internshipsTable').DataTable();
+    } );
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h2>
+                Results
+            </h2>
+        </div>
+    <div class="results">
+        <table id="internshipsTable" border="2" width=100%>
+            <thead>  
+                <td>Job Title</td>  
+                <td>Company Name</td>  
+                <td>Company Rating</td>   
+                <td>Location</td>  
+                <td>Remote?</td>  
+                <td>Posted Date</td>  
+                </thead> 
+            {% for row in rows %}
+                <tr>
+                    <td>
+                        <a href={{row["job_url"]}} target="_blank">
+                            {{row["job_title"]}}
+                        </a>
+                    </td>
+                    <td>{{row["company_name"]}}</td>
+                    <td>{{row["company_rating"]}}</td>
+                    <td>{{row["location"]}}</td>
+                    <td>{{row["remote"]}}</td>
+                    <td>{{row["posted_date"]}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
